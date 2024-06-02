@@ -4,65 +4,108 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2D Coordinate Graph with Circles</title>
-    <style></style>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      div {
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        color: #333;
+      }
+
+      input[type="number"] {
+        width: 100px;
+        height: 20px;
+        margin: 5px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      input[type="number"]:focus {
+        border-color: #aaa;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      #container {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      #input-area {
+        width: 50%;
+        /* Add some padding if you want */
+      }
+
+      #simulator {
+        width: 50%;
+        /* Add some padding if you want */
+      }
+    </style>
   </head>
   <body>
     <script type="module" src="script.js"></script>
-    <div>
-      <h2>Circle 1</h2>
-      <input type="number" id="circle1-x" value="0" placeholder="Position X" />
-      <input type="number" id="circle1-y" value="0" placeholder="Position Y" />
-      <input type="number" id="circle1-radius" value="5" placeholder="Radius" />
-      <input
-        type="number"
-        id="circle1-vector-x"
-        value="0"
-        placeholder="Vector X"
-      />
-      <input
-        type="number"
-        id="circle1-vector-y"
-        value="0"
-        placeholder="Vector Y"
-      />
-    </div>
+    <div id="container">
+      <div id="input-area">
+        <div>
+          <h2>Circle 1</h2>
+          <label for="circle1-x">Position X:</label>
+          <input type="number" id="circle1-x" value="0" />
+          <br />
+          <label for="circle1-y">Position Y:</label>
+          <input type="number" id="circle1-y" value="0" />
+          <br />
+          <label for="circle1-radius">Radius:</label>
+          <input type="number" id="circle1-radius" value="5" />
+          <br />
+          <label for="circle1-vector-x">Vector X:</label>
+          <input type="number" id="circle1-vector-x" value="0" />
+          <br />
+          <label for="circle1-vector-y">Vector Y:</label>
+          <input type="number" id="circle1-vector-y" value="0" />
+        </div>
 
-    <div>
-      <h2>Circle 2</h2>
-      <input type="number" id="circle2-x" value="2" placeholder="Position X" />
-      <input type="number" id="circle2-y" value="2" placeholder="Position Y" />
-      <input type="number" id="circle2-radius" value="5" placeholder="Radius" />
-      <input
-        type="number"
-        id="circle2-vector-x"
-        value="-0.02"
-        placeholder="Vector X"
-      />
-      <input
-        type="number"
-        id="circle2-vector-y"
-        value="0.02"
-        placeholder="Vector Y"
-      />
-    </div>
+        <div>
+          <h2>Circle 2</h2>
+          <label for="circle2-x">Position X:</label>
+          <input type="number" id="circle2-x" value="2" />
+          <br />
+          <label for="circle2-y">Position Y:</label>
+          <input type="number" id="circle2-y" value="2" />
+          <br />
+          <label for="circle2-radius">Radius:</label>
+          <input type="number" id="circle2-radius" value="5" />
+          <br />
+          <label for="circle2-vector-x">Vector X:</label>
+          <input type="number" id="circle2-vector-x" value="-0.02" />
+          <br />
+          <label for="circle2-vector-y">Vector Y:</label>
+          <input type="number" id="circle2-vector-y" value="0.02" />
+        </div>
 
-    <div>
-      <h2>Circle 3</h2>
-      <input type="number" id="circle3-x" value="-4" placeholder="Position X" />
-      <input type="number" id="circle3-y" value="-4" placeholder="Position Y" />
-      <input type="number" id="circle3-radius" value="5" placeholder="Radius" />
-      <input
-        type="number"
-        id="circle3-vector-x"
-        value="0.02"
-        placeholder="Vector X"
-      />
-      <input
-        type="number"
-        id="circle3-vector-y"
-        value="-0.02"
-        placeholder="Vector Y"
-      />
+        <div>
+          <h2>Circle 3</h2>
+          <label for="circle3-x">Position X:</label>
+          <input type="number" id="circle3-x" value="-4" />
+          <br />
+          <label for="circle3-y">Position Y:</label>
+          <input type="number" id="circle3-y" value="-4" />
+          <br />
+          <label for="circle3-radius">Radius:</label>
+          <input type="number" id="circle3-radius" value="5" />
+          <br />
+          <label for="circle3-vector-x">Vector X:</label>
+          <input type="number" id="circle3-vector-x" value="0.02" />
+          <br />
+          <label for="circle3-vector-y">Vector Y:</label>
+          <input type="number" id="circle3-vector-y" value="-0.02" />
+        </div>
+      </div>
+      <!-- Simulator -->
+      <div id="simulator"></div>
     </div>
   </body>
 </html>

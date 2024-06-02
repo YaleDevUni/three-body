@@ -50,8 +50,8 @@ class Circle {
       }
     }
     // stabilize the simulation by ignoring small velocities
-    if (Math.abs(this.velocity.x) < 1e-6) this.velocity.x = 0;
-    if (Math.abs(this.velocity.y) < 1e-6) this.velocity.y = 0;
+    if (Math.abs(this.velocity.x) < 1e-5) this.velocity.x = 0;
+    if (Math.abs(this.velocity.y) < 1e-5) this.velocity.y = 0;
     this.x += this.velocity.x;
     this.y += this.velocity.y;
     console.log(this.x, this.y);
@@ -120,6 +120,7 @@ class CoordinateGraph {
   }
 
   start() {
+    if (this.running) return;
     this.running = true;
     setInterval(() => {
       this.update();
@@ -173,7 +174,7 @@ const width = 500 - margin.left - margin.right;
 const height = 500 - margin.top - margin.bottom;
 
 const svg = d3
-  .select("body")
+  .select("#simulator")
   .append("svg")
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
@@ -232,7 +233,7 @@ graph.addCircle(circle3);
 
 // Create a run button to start the simulation
 const runButton = d3
-  .select("body")
+  .select("#simulator")
   .append("button")
   .text("Run")
   .on("click", () => {
@@ -241,7 +242,7 @@ const runButton = d3
 
 // Create a reset button to reset the simulation
 const resetButton = d3
-  .select("body")
+  .select("#simulator")
   .append("button")
   .text("Set Initial Values")
   .on("click", () => {
